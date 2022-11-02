@@ -1,0 +1,76 @@
+DÉCOMPOSITION DU PROBLÈME:
+
+--------------------------------------------------------------
+-Le client participe t'il au plan boni?
+-Obtenir le nombre d'appel du client
+
+---Pour chaque appel :
+
+	--Obtenir les renseignements sur l'appel:
+		-Obtenir le code régional joint (100 et 990)
+		-Obtenir l'heure du début de l'appel (forme militaire HHMM)(à valider)
+		-Obtenir le jour de la semaine (trois lettres: "dim") (à valider)
+		-Obtenir la durée de l'appel (min. une minute) (à valider)
+		
+	--Obtenir le coût de l'appel :
+		   -Déterminer le tarif de base de l'appel en fonction du code régional
+		   -Déterminer les réductions
+		   -Déterminer le coût total
+			
+---Afficher le sommaire :
+	-Frais facturés
+	-Durée total des appels
+	-Montant net à payer
+	-Réductions accordés le cas échéant
+
+----------------------------------------------------------------
+	
+	Premier niveau :
+	*bool ParticipationPlanBoni*, int ObtenirLeNombreAppelsClient, void ObtenirInfoAppel, double ObtenirCoûtAppel, void AfficherSommaire
+	
+----------------------------------------------------------------
+
+	Paramètres :
+		-bool ObtenirParticipationPlanBoni:
+			bool partipationPlanBoni
+
+		-int ObtenirNombreAppelsClient
+			int nbAppels
+			
+		-void ObtenirInfoAppel
+			int codeRégional, int heureDébutAppel, string jourDeLaSemaine, int duréeAppel
+			
+		-double ObtenirCoûtAppel
+			double tarifDeBase
+			double réductions
+			double coûtTotal
+			
+----------------------------------------------------------------
+	
+	Deuxième niveau :
+		void ObtenirInfoAppel:
+			int ObtenirCodeRégional, int ObtenirHeureDébut, string ObtenirJourSemaine, int ObtenirDuréeAppel
+			
+		double ObtenirCoûtAppel:
+			double DéterminerTarifBase, double DéterminerRéduction, double DéterminerCoûtTotal
+			
+		void AfficherSommaire
+			AfficherFraisFacturé, AfficherDuréeTotalAppels, AfficherMontantNetÀPayer, AfficherRéductionSiAccordés
+			
+----------------------------------------------------------------			
+	
+	Paramètres :
+		-int ObtenirCodeRégional
+			int codeRégional
+			
+		-int ObtenirHeureDébut
+			int heureDébutAppel
+			
+		-string ObtenirJourSemaine
+			string jourDeLaSemaine
+		
+		-int ObtenirDuréeAppel
+			int duréeAppel
+		
+-----------------------------------------------------------------
+
